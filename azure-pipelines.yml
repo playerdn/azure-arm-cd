@@ -12,7 +12,7 @@ pool:
 parameters:
   - name: serviceConnection
     type: string
-    default: 'AzureRmPipeline-conn'
+    default: 'AzureRmPipeline-conn-aaa'
   
 steps:
 - task: AzureResourceManagerTemplateDeployment@3
