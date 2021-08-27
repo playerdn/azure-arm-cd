@@ -18,7 +18,7 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'pay-as-you-go (personal)(1)(0117d21b-998a-4874-938f-becdcb5db055)'
+    azureResourceManagerConnection: 'pay-as-you-go (personal)(0117d21b-998a-4874-938f-becdcb5db055)'
     subscriptionId: '0117d21b-998a-4874-938f-becdcb5db055'
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'azure-devops-testing'
