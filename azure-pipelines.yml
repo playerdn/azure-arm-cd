@@ -9,11 +9,16 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+parameters:
+  - name: serviceConnection
+    type: string
+    default: 'AzureRmPipeline-conn'
+  
 steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'AzureRmPipeline-conn'
+    azureResourceManagerConnection: ${{ parameters.serviceConnection }}
     subscriptionId: '0117d21b-998a-4874-938f-becdcb5db055'
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'azure-devops-testing'
@@ -23,4 +28,3 @@ steps:
     overrideParameters: '-projectName xtdevops'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
-
